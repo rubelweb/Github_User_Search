@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react'
 import { GithubContext } from '../GitHubContext/GitHubContext'
 import { FetchUserData } from '../Api/Api'
+import { Form, Input, Button } from '../Styles/Styles'
 
 const SearchForm = () => {
     const [inputValue, setInputValue] = useState('')
@@ -19,15 +20,15 @@ const SearchForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
+        <Form onSubmit={handleSubmit}>
+            <Input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Enter GitHub username"
             />{' '}
-            <button type="submit">Search</button>
-        </form>
+            <Button type="submit">Search</Button>
+        </Form>
     )
 }
 

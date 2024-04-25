@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import UserCard from '../UserCard/UserCard'
 import { GithubContext } from '../GitHubContext/GitHubContext'
-
+import { List } from '../Styles/Styles'
 
 const UserList = () => {
     const { state } = useContext(GithubContext)
@@ -11,11 +11,11 @@ const UserList = () => {
     if (error) return <div>Error: {error}</div>
 
     return (
-        <ul>
+        <List>
             {users.map((user) => (
                 <UserCard key={user.id} user={user} />
             ))}
-        </ul>
+        </List>
     )
 }
 
